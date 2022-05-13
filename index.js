@@ -230,10 +230,9 @@ Use getArtistByIndex to do the following:
 
 🌟 EXAMPLE: if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
-}
-
+function getArtistByIndex(array1, index) {
+  return `the artist at index ${array1[index].id} is ${array1[index].name}`
+};
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -244,10 +243,13 @@ Use copy to do the following:
 🌟 EXAMPLE of return: ["Amedeo Modigliani", "Vasiliy Kandinskiy", "Diego Rivera"....]
 */
 
-function listOfNames(/*Your Code Here*/) {
-  /*Your Code Here*/
-}
-
+function listOfNames(originalArray){
+  const newJustNamesArray = []; 
+  for(let i=0; i < originalArray.length; i++){   
+    newJustNamesArray.push(originalArray[i].name)
+      }
+  return newJustNamesArray;
+};
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -259,9 +261,10 @@ Use removeArtist to do the following:
 5. Return the resulting copied array
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
-}
+function removeArtist(originalArray, indexOfArtist){
+    originalArray.splice(indexOfArtist, 1);
+    return originalArray
+   };
 
 
 
@@ -294,10 +297,15 @@ Use lotsOfArt to do the following:
 🌟 EXAMPLE: lotsOfArt(artists) will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
 */
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
-}
-
+function lotsOfArt(originalArray){
+    const newArray = [];
+    for(let i=0; i < originalArray.length; i++){
+       if(originalArray[i].paintings > 100){
+       newArray.push(originalArray[i].name)
+  }
+  }
+    return newArray
+  };
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -310,10 +318,19 @@ Use artistInfo to do the following:
   "Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."
 */
 
-function artistInfo(/*Your Code Here*/){
-  /*Your Code Here*/
-}
+//For some reason this one is returning the brackets with the string
+//of the artist bio. I need to find a way to get it to not 
+// print out the brakets too becuase it is messing up the test.
 
+function artistInfo(originalArray, stringName){
+  const newArray = [];
+  for(let i=0; i < originalArray.length; i++){
+     if(originalArray[i].name === stringName){
+     newArray.push(originalArray[i].bio)
+}
+}
+  return `${newArray}`;
+};
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -325,8 +342,14 @@ Use artistByCountry to do the following:
 🌟 EXAMPLE: Invoking artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-function artistByCountry(/*Your Code Here*/){
-  /*Your Code Here*/
+function artistByCountry(array1, string1){
+  const newArtistNames = [];
+  for(let i=0; array1.length; i++){
+    if(array1[i].nationality === string1){
+      newArtistNames.push(array1[i].name)
+    }
+  }
+  return newArtistNames;
 }
 
 
