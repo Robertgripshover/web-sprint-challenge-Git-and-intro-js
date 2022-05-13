@@ -283,8 +283,16 @@ Use addArtist to do the following:
 4. Return the array
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function addArtist(originalArray, stringName, stringYears, stringGenre, stringNationlity, stringBio) {
+  const newObject = {
+    name: stringName,
+    years: stringYears,
+    genre: stringGenre,
+    nationality: stringNationlity,
+    bio: stringBio,
+  }
+  originalArray.push(newObject);
+  return originalArray
 }
 
 
@@ -349,7 +357,7 @@ function artistByCountry(array1, string1){
       newArtistNames.push(array1[i].name)
     }
   }
-  return newArtistNames;
+  return `${newArtistNames}`;
 }
 
 
